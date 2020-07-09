@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <br>
+    {% if user.is_authenticated %}
+        <h5>Hello, {{user.first_name}}</h5>
+        <a href='accounts/logout'><button type="button" class="btn btn-outline-primary">Log Out</button></a>
+    {% else %}
+        <a href='accounts/register'><button type="button" class="btn btn-outline-primary">Register</button></a>
+        <a href='accounts/login'><button type="button" class="btn btn-outline-primary">Login</button></a>
+    {% endif %}
+{% endblock %}
